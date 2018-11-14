@@ -1,13 +1,12 @@
 import UIKit
-import Foundation
 
 struct Painting {
-    
-    let image: UIImage = UIImage()
+    let image: UIImage
     var isLiked: Bool
     
-    init() {
-        isLiked = false
+    init(_ image: UIImage, _ isLiked: Bool = false) {
+        self.isLiked = isLiked
+        self.image = image
     }
     
     
