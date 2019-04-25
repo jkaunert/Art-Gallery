@@ -5,36 +5,26 @@ class PaintingModel: NSObject, UITableViewDataSource, PaintingTableViewCellDeleg
 
     let reuseIdentifier = "cell"
     
-    var imageArray: [UIImage] = []
+   weak var tableView: UITableView?
     var paintings: [Painting] = []
     
     
     
-    weak var tableView: UITableView?
-    
-    
     override init(){
-        
-            for count in 1 ... 12 {
+            var imageArray: [UIImage] = []
+            for count in 1...12 {
                 let imageName = "Image\(count)"
-                if let validImage = UIImage(named: imageName) {
-                    let painting = Painting(validImage)
-                    paintings.append(painting)
-                    print(paintings)
+                if let image = UIImage(named: imageName) {
+                    imageArray.append(image)
                 }
-                
             }
         
-            
-        }
-    
-    
-    
-    func tappedLikeButton(on cell: PaintingTableViewCell) {
-        guard let indexPath = tableView?.indexPath(for: cell) else {fatalError("The cell does not exist(tappedLikeButton)")}
-        paintings[indexPath.row].isLiked.toggle()
-
+            for image in imageArray {
+                paintings.append(Painting(image))
+            }
+            print(paintings)
     }
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         self.tableView = tableView
@@ -44,11 +34,23 @@ class PaintingModel: NSObject, UITableViewDataSource, PaintingTableViewCellDeleg
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return paintings.count
     }
-
+    
+    func tappedLikeButton(on cell: PaintingTableViewCell) {
+        guard let indexPath = tableView?.indexPath(for: cell) else {fatalError("The cell does not exist (tappedLikeButton)")}
+        paintings[indexPath.row].isLiked.toggle()
+        cell.likeButton.alpha = paintings[indexPath.row].isLiked ? 1.0 : 0.33
+    }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? PaintingTableViewCell else {return UITableViewCell()}
-        cell.imageView?.image = paintings[indexPath.row].image
-        cell.delegate = self
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? PaintingTableViewCell else { fatalError("Yeah you messed up...")}
+        cell.delegateV = self
+        cell.portraitView.image = paintings[indexPath.row].image
+        
+        let title = "Like"
+        cell.likeButton?.setTitle(title, for: [])
+        cell.likeButton.alpha = paintings[indexPath.row].isLiked ? 1.0 : 0.33
+        
         return cell
     }
 

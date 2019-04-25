@@ -14,7 +14,6 @@
 		ABE614D7219AB20C00619368 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE614D6219AB20C00619368 /* AppDelegate.swift */; };
 		ABE614D9219AB20C00619368 /* PaintingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE614D8219AB20C00619368 /* PaintingViewController.swift */; };
 		ABE614DC219AB20C00619368 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE614DA219AB20C00619368 /* Main.storyboard */; };
-		ABE614DE219AB20D00619368 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE614DD219AB20D00619368 /* Assets.xcassets */; };
 		ABE614E1219AB20D00619368 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE614DF219AB20D00619368 /* LaunchScreen.storyboard */; };
 		ABE614E9219AB32400619368 /* PaintingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE614E8219AB32400619368 /* PaintingTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -28,7 +27,6 @@
 		ABE614D6219AB20C00619368 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE614D8219AB20C00619368 /* PaintingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingViewController.swift; sourceTree = "<group>"; };
 		ABE614DB219AB20C00619368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		ABE614DD219AB20D00619368 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABE614E0219AB20D00619368 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABE614E2219AB20D00619368 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABE614E8219AB32400619368 /* PaintingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingTableViewCell.swift; sourceTree = "<group>"; };
@@ -66,13 +64,12 @@
 			children = (
 				ABE614D6219AB20C00619368 /* AppDelegate.swift */,
 				ABE614D8219AB20C00619368 /* PaintingViewController.swift */,
-				ABE614E8219AB32400619368 /* PaintingTableViewCell.swift */,
-				ABE614DA219AB20C00619368 /* Main.storyboard */,
-				AB5DBB5F219ABA4A00F719BA /* Painting.swift */,
 				AB5DBB61219ABA7800F719BA /* PaintingTableViewCellDelegate.swift */,
+				ABE614E8219AB32400619368 /* PaintingTableViewCell.swift */,
+				AB5DBB5F219ABA4A00F719BA /* Painting.swift */,
 				AB5DBB63219ABA8900F719BA /* PaintingModel.swift */,
+				ABE614DA219AB20C00619368 /* Main.storyboard */,
 				AB5DBB65219ACD7400F719BA /* PaintingAssets.xcassets */,
-				ABE614DD219AB20D00619368 /* Assets.xcassets */,
 				ABE614DF219AB20D00619368 /* LaunchScreen.storyboard */,
 				ABE614E2219AB20D00619368 /* Info.plist */,
 			);
@@ -111,6 +108,7 @@
 				TargetAttributes = {
 					ABE614D2219AB20C00619368 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -139,7 +137,6 @@
 			files = (
 				AB5DBB66219ACD7400F719BA /* PaintingAssets.xcassets in Resources */,
 				ABE614E1219AB20D00619368 /* LaunchScreen.storyboard in Resources */,
-				ABE614DE219AB20D00619368 /* Assets.xcassets in Resources */,
 				ABE614DC219AB20C00619368 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,7 +308,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jkaunert.Art-Gallery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -329,7 +326,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jkaunert.Art-Gallery";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
